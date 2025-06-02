@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Real Estate AI OS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 80px;
+        background: #eef1f4;
+      }
+      h1 {
+        color: #111;
+      }
+      input {
+        padding: 10px;
+        width: 250px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button {
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login to Real Estate AI OS</h1>
+    <form>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+  </body>
+</html>
