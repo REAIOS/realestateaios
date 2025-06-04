@@ -69,7 +69,7 @@
     <h1>🚀 Real Estate AI™️ OS</h1>
     <p>Your all-in-one platform to dominate real estate with automation, AI, and speed.</p>
 
-    <a class="cta-button" href="#">Get Early Access</a>
+    <a id="get-early-access" class="cta-button" href="#">Get Early Access</a>
     <div class="coming-soon">Coming soon to the App Store</div>
 
     <div class="store-icons">
@@ -79,10 +79,20 @@
 
     <img src="app-screenshot.png.JPG" alt="App Screenshot" style="max-width: 400px; width: 100%; display: block; margin: 0 auto;" />
 
-    <div class="footer">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a>
-    </div>
-  </div>
+    <!-- your entire content here -->
+
+<div class="footer">
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+</div>
+
+<!-- ✅ Place the script right before </body> -->
+<script>
+  document.getElementById("get-early-access").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "login.html"; // or your actual login page
+  });
+</script>
+
 </body>
 </html>
