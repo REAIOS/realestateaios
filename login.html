@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Real Estate AI OS</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 40px; max-width: 500px; margin: auto;">
+  <h2>🔐 Get Early Access</h2>
+  <p>Enter your email below and we’ll send you a magic link to log in instantly.</p>
+
+  <form id="login-form" style="margin-top: 20px;">
+    <input type="email" id="email" placeholder="Enter your email" required
+      style="padding: 10px; width: 100%; font-size: 16px;" />
+    <button type="submit"
+      style="margin-top: 10px; padding: 10px 20px; font-size: 16px; background-color: #00C896; color: white; border: none; cursor: pointer;">
+      Send Magic Link
+    </button>
+  </form>
+
+  <script>
+    const SUPABASE_URL = 'https://btvlmnjrtugepuawuurq.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0dmxtbmpydHVnZXB1YXd1dXJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg5OTg0MTMsImV4cCI6MjA2NDU3NDQxM30.sbTGd_pVZwpCUhxxkMZixVTob_5aunHatfJMsFoFKCg';
+
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+
+      const { error } = await supabase.auth.signInWithOtp({ email });
+
+      if (error) {
+        alert('Login failed: ' + error.message);
+      } else {
+        alert('✅ Magic link sent! Check your inbox.');
+      }
+    });
+  </script>
+</body>
+</html>
