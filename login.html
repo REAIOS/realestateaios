@@ -29,7 +29,12 @@
     e.preventDefault();
     const email = document.getElementById('email').value;
 
-    const { error } = await supabase.auth.signInWithOtp({ email });
+    const { error } = await supabase.auth.signInWithOtp({
+  email,
+  options: {
+    emailRedirectTo: 'https://whop.com/checkout/6huyO6LyzGSeKN2Ern-lc3Y-PeNk-feVE-UV1FWXNBxdGu/'
+  }
+});
 
     if (error) {
       alert('Login failed: ' + error.message);
