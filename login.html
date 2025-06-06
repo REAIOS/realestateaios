@@ -18,24 +18,26 @@
     </button>
   </form>
 
-  <script>
-    const SUPABASE_URL = 'https://btvlmnjrtugepuawuurq.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0dmxtbmpydHVnZXB1YXd1dXJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg5OTg0MTMsImV4cCI6MjA2NDU3NDQxM30.sbTGd_pVZwpCUhxxkMZixVTob_5aunHatfJMsFoFKCg';
+  <script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const SUPABASE_URL = 'https://btvlmnjrtugepuawuurg.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsIn...'; // Replace with your real key
 
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-      const { error } = await supabase.auth.signInWithOtp({ email });
+  document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
 
-      if (error) {
-        alert('Login failed: ' + error.message);
-      } else {
-        alert('✅ Magic link sent! Check your inbox.');
-      }
-    });
-  </script>
+    const { error } = await supabase.auth.signInWithOtp({ email });
+
+    if (error) {
+      alert('Login failed: ' + error.message);
+    } else {
+      alert('✅ Magic link sent! Check your inbox.');
+    }
+  });
+</script>
 </body>
 </html>
